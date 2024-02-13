@@ -23,7 +23,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/aditya.vikram/tic-tac-toe.git
+git clone [https://github.com/aditya.vikram/tic-tac-toe.git](https://github.com/Aditya-vikram01/Tic-Tac-Toe-REACT.git)
 Navigate to the project directory:
 
 bash
