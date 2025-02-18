@@ -1,9 +1,9 @@
-import { initialBoard } from "../WinningComponent";
+import { initialBoard } from "../winning-combinations";
 
-import { WINNING_COMBINATIONS } from "../WinningComponent";
+import { WINNING_COMBINATIONS } from "../winning-combinations";
 
 
-export function deriveActivePlayer(gameTurns) {
+export  function deriveActivePlayer(gameTurns) {
     let currentPlayer = "X";
   
     if (gameTurns.length > 0 && gameTurns[0].player === "X") {
@@ -12,8 +12,9 @@ export function deriveActivePlayer(gameTurns) {
     return currentPlayer;
   }
   
-  export function deriveWinner(gameBoard, player) {
+  export  function deriveWinner(gameBoard, players) {
     let winner;
+  
     for (const combination of WINNING_COMBINATIONS) {
       const firstSquareSymbol =
         gameBoard[combination[0].row][combination[0].column];
@@ -27,13 +28,14 @@ export function deriveActivePlayer(gameTurns) {
         firstSquareSymbol === secondSquareSymbol &&
         firstSquareSymbol === thirdSquareSymbol
       ) {
-        winner = player[firstSquareSymbol];
+        winner = players[firstSquareSymbol];
       }
     }
+    console.log(winner);
     return winner;
   }
   
-  export function deriveGameBoard(gameTurns) {
+  export  function deriveGameBoard(gameTurns) {
     let gameBoard = [...initialBoard.map((arr) => [...arr])];
   
     for (const turn of gameTurns) {
